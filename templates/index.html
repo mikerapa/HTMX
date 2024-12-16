@@ -19,7 +19,7 @@
 <body class="p-4">
     <div class="container">
         <h1>To-Do List</h1>
-        <form hx-post="/add" hx-target="#todo-list" hx-swap="outerHTML" class="mb-3" onsubmit="clearTaskName()">
+        <form hx-post="/add" hx-target="#todo-list" hx-swap="outerHTML" hx-on="htmx:afterRequest: clearTaskName()" class="mb-3">
             <div class="input-group">
                 <input type="text" name="task" class="form-control" placeholder="Enter a new task" required>
                 <button class="btn btn-primary" type="submit">Add</button>
